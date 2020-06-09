@@ -1,0 +1,55 @@
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+
+<ion-header [translucent]="true">
+      <ion-toolbar>
+        
+        <ion-title size="large">
+          <div class="header">
+          <img alt="logo" id="header_logo" height="60" src="../../assets/icon/Logo UTM.jpg">
+      <!--<span id="lecturername" style="font-size:large; font-weight:bold; float:right;">--> 
+         <div class="header-right" style="float: right;">
+        <ion-icon name="person-circle-outline" style="zoom:2.0; vertical-align: middle;"></ion-icon>
+          <strong style="font-size: 30px;vertical-align: middle;">Lecturer001</strong>
+          </div>
+        </div>
+      <!-- </span>--> 
+        </ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-router-outlet id="main"></ion-router-outlet>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<!--<section section="full width">
+  <ion-button expand="full" size="undefined" style="--background: rgb(138, 55, 30);font-size: 30px;" strong="true">Update student result</ion-button></section>-->
+  <!-- <ion-item *ngFor="let course of Courses">
+    <ion-label>My Courses</ion-label> 
+  <ion-select [(ngModel)]="Courses" okText="Update Result" cancelText="Cancel"> -->
+  <!-- <ion-select-option value="a">{{course.course_list[0].Code}}</ion-select-option> -->
+  <!-- <ion-select-option value=" b">B</ion-select-option>
+  <ion-select-option value="c">C</ion-select-option>
+  <ion-select-option value="d">D</ion-select-option>
+</ion-select> 
+</ion-item> -->
+
+<ion-item>
+  <ion-label>My courses</ion-label>
+  <ion-select  [(ngModel)]="SelectedCourseID" okText="Okay" cancelText="Dismiss">
+     <ion-select-option *ngFor="let course of Courses" value={{course._id}}>{{course.Code + '-' +course.Section + ' ' + course.Course_Name}}</ion-select-option>
+   
+  </ion-select>
+  
+</ion-item>
+<section section="full width"></section>
+
+ <ion-button expand="full" size="undefined" style="--background: rgb(138, 55, 30);font-size: 20px;" (click)="get_student()">Student List</ion-button>
+
+<!--<ion-button expand="full" size="undefined" style="--background: rgb(138, 55, 30);font-size: 20px;" [routerLink]="['/student-list']">Student List</ion-button>
+
+--></ion-content>

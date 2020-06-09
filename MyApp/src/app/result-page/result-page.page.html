@@ -1,0 +1,420 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>
+          Examination Result Slip
+      </ion-title>
+      <ion-buttons slot="primary">
+          <ion-button color="primary" (click)="createPdf()">
+              <ion-icon slot="icon-only" name="print"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<html>
+    <ion-content padding>
+        <div class="printable-content">
+            <div class="printable-area" id="printable-area">
+                    <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="20%" rowspan="4">
+                            <img border="0" src="../../assets/icon/Logo UTM.jpg" width="250"></td>
+                          <td width="60%" align="center">
+                            <p align="center"><b><font size="2" face="Courier New">UNIVERSITI TEKNOLOGI MALAYSIA</font></b></td>
+                          <td width="20%" align="center">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="60%" align="center">
+                            <p align="center"><font size="2" face="Courier New">ACADEMIC MANAGEMENT DIVISION ( UNDERGRADUATE )</font></td>
+                          <td width="20%" align="center"></td>
+                        </tr>
+                        <tr>
+                          <td width="60%" align="center">
+                            <p align="center"><font size="2" face="Courier New">81310 UTM JOHOR BAHRU,</font></td>
+                          <td width="20%" align="center">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td width="60%" align="center">
+                            <p align="center"><font size="2" face="Courier New">JOHOR,MALAYSIA.</font></td>
+                          <td width="20%" align="center">
+                          </td>
+                        </tr>
+                      </table>
+                    <table border="1" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                          <td width="100%">
+                            <div align="center">
+                              
+                              <table border="0" cellpadding="0" cellspacing="1" width="95%" class="style1">
+                                <tr>
+                                  <td width="13%">&nbsp;&nbsp;</td>
+                                  <td width="3%"></td>
+                                  <td width="9%"></td>
+                                  <td width="2%"></td>
+                                  <td width="42%"></td>
+                                  <td width="2%"></td>
+                                  <td width="29%"></td>
+                                </tr>
+                                <tr>
+                                  <td width="13%"><b>NAME</b></td>
+                                  <td width="3%"><b>:</b></td>
+                                  <td width="53%" colspan="3">{{student.name}}</td>
+                                  <td width="2%"></td>
+                                  <td width="29%"><b>EXAMINATION RESULT</b></td>
+                                </tr>
+                                <tr>
+                                  <td width="13%"><b>IC/PASSPORT</b></td>
+                                  <td width="3%"><b>:</b></td>
+                                  <td width="53%" colspan="3">{{student.ic}}</td>
+                                  <td width="2%"></td>
+                                  <td width="29%"><b>SEMESTER</b> 1</td>
+                                </tr>
+                                <tr>
+                                  <td width="13%"><b>MATRIC NO.</b></td>
+                                  <td width="3%"><b>:</b></td>
+                                  <td width="53%" colspan="3">{{student.matric}}</td>
+                                  <td width="2%"></td>
+                                  <td width="29%"><b>SESSION</b> 2019/2020</td>
+                                </tr>
+                                <tr>
+                                  <td width="13%"><b>FACULTY</b></td>
+                                  <td width="3%"><b>:</b></td>
+                                  <td width="84%" colspan="5">{{student.faculty}}</td>
+                                </tr>
+                                <tr>
+                                  <td width="13%"><b>PROGRAMME</b></td>
+                                  <td width="3%"><b>:</b></td>
+                                  <td width="84%" colspan="5">{{student.program}}</td>
+                                </tr>
+                                <tr>
+                                  <td width="13%"><b>YEAR</b></td>
+                                  <td width="3%"><b>:</b></td>
+                                  <td width="84%" colspan="5">{{student.year}}</td>
+                                </tr>
+                                <tr>
+                                  <td width="13%"><b>ACADEMIC ADVISOR</b></td>
+                                  <td width="3%"><b>:</b></td>
+                                  <td width="84%" colspan="5">{{student.pa}}</td>
+                                </tr>
+                                <tr>
+                                  <td width="13%"><b>SPONSOR CODE</b></td>
+                                  <td width="3%"><b>:</b></td>
+                                  <td width="84%" colspan="5">{{student.sc}}</td>
+                                </tr>
+                                <tr>
+                                  <td width="13%">&nbsp;</td>
+                                  <td width="3%"></td>
+                                  <td width="9%"></td>
+                                  <td width="2%"></td>
+                                  <td width="42%"></td>
+                                  <td width="2%"></td>
+                                  <td width="29%"></td>
+                                </tr>
+                              </table>
+                            </div>
+                            <div align="center">
+                              
+                              <table border="0" cellpadding="0" cellspacing="0" width="95%">
+                                <tr >
+                                  <td width="76%" align="center" valign="top" class="style7" >
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                      <tr>
+                                        <td width="11%" align="center" class="style31" bgcolor="#C0C0C0"><b>CODE</b></td>
+                                        <td width="56%" align="center" class="style31"><b>COURSE</b></td>
+                                        <td width="7%" align="center" class="style31" bgcolor="#C0C0C0"><b>GR</b></td>
+                                        <td width="8%" align="center" class="style31"><b>MN</b></td>
+                                        <td width="5%" align="center" class="style31" bgcolor="#C0C0C0"><b>KR</b></td>
+                                        <td width="9%" align="center" class="style31"><b>JMN</b></td>
+                                        <td width="4%" align="center" class="style32" bgcolor="#C0C0C0"><b>ST</b></td>
+                                      </tr>
+                      
+                                    <tr *ngFor="let result of results">
+                                        <td width="11%" class="style41" valign="top" bgcolor="#C0C0C0">
+                                          <p align="center">{{result.Code}}&nbsp;</p>
+                                        </td>
+                                        <td width="56%" class="style41" valign="top">
+                                          <p>{{result.Name}}&nbsp;</p>
+                                        </td>
+                                        <td width="7%" class="style41" valign="top" bgcolor="#C0C0C0">
+                                          <p align="center">{{result.Grade}}&nbsp;</p>
+                                        </td>
+                                        <td width="8%" class="style41" valign="top">
+                                          <p align="center">{{result.Pointer}}&nbsp;</p>
+                                        </td>
+                                        <td width="5%" class="style41" valign="top" bgcolor="#C0C0C0">
+                                          <p align="center">{{result.Credit_hour}}&nbsp;</p>
+                                        </td>
+                                        <td width="9%" class="style41" valign="top">
+                                          <p align="center">{{result.Pointer * result.Credit_hour}}&nbsp;</p>
+                                        </td>
+                                        <td width="4%" class="style42" valign="top" bgcolor="#C0C0C0">
+                                          <p align="center"> &nbsp;</p>
+                                        </td>
+                                      </tr>
+                                                                      
+                                      <tr>
+                                        <td width="11%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="56%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="7%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="8%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="5%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="9%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="4%" class="style42" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                      </tr>
+                                      
+                                      <tr>
+                                        <td width="11%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="56%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="7%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="8%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="5%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="9%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="4%" class="style42" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                      </tr>
+                                      
+                                      <tr>
+                                        <td width="11%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="56%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="7%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="8%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="5%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="9%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="4%" class="style42" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                      </tr>
+                                      
+                                      <tr>
+                                        <td width="11%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="56%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="7%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="8%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="5%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="9%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="4%" class="style42" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                      </tr>
+                                      
+                                      <tr>
+                                        <td width="11%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="56%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="7%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="8%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="5%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="9%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="4%" class="style42" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                      </tr>
+                                      
+                                      <tr>
+                                        <td width="11%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="56%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="7%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="8%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="5%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="9%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="4%" class="style42" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                      </tr>
+                                      
+                                      <tr>
+                                        <td width="11%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="56%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="7%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="8%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="5%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="9%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="4%" class="style42" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                      </tr>
+                                      
+                                      <tr>
+                                        <td width="11%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="56%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="7%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="8%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="5%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="9%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="4%" class="style42" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                      </tr>
+                                      
+                                      <tr>
+                                        <td width="11%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="56%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="7%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="8%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="5%" class="style41" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="9%" class="style41" valign="top">&nbsp;</td>
+                                        <td width="4%" class="style42" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+                                      </tr>
+                                      
+                                     
+                                    </table>
+                                  </td>
+                                  <td width="25%" align="center" valign="top" class="style71" >
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                      <tr>
+                                        <td width="19%" class="style31">&nbsp;</td>
+                                        <td width="38%" class="style31" align="center" bgcolor="#C0C0C0"><b>This Sem</b></td>
+                                        <td width="43%" class="style32" align="center"><b>All Sem</b></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" class="style41"><b>&nbsp;KD</b></td>
+                                        <td width="38%" class="style41" align="right" bgcolor="#C0C0C0">{{get_total_CH()}}&nbsp;</td>
+                                        <td width="43%" class="style42" align="right">87&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" class="style41"><b>&nbsp;CE</b></td>
+                                        <td width="38%" class="style41" align="right" bgcolor="#C0C0C0">0&nbsp;</td>
+                                        <td width="43%" class="style42" align="right">&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" class="style41"><b>&nbsp;KK</b></td>
+                                        <td width="38%" class="style41" align="right" bgcolor="#C0C0C0">{{get_total_CH()}}&nbsp;</td>
+                                        <td width="43%" class="style42" align="right">87&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" class="style41"><b>&nbsp;JMN</b></td>
+                                        <td width="38%" class="style41" align="right" bgcolor="#C0C0C0">68.00&nbsp;</td>
+                                        <td width="43%" class="style42" align="right">339.32&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" class="style41"><b>&nbsp;PNG</b></td>
+                                        <td width="38%" class="style41" align="right" bgcolor="#C0C0C0">{{get_png()}}&nbsp;</td>
+                                        <td width="43%" class="style42" align="right">&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="19%" class="style41"><b>&nbsp;PNGK</b></td>
+                                        <td width="38%" class="style41" align="right" bgcolor="#C0C0C0">&nbsp;</td>
+                                        <td width="43%" class="style42" align="right">3.90&nbsp;</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="100%" colspan="3" align="center" class="style5" bgcolor="#C0C0C0"><b>Conferment Result</b></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="100%" colspan="3" class="style5">
+                                          <p align="center">GOOD PASS</td>
+                                      </tr>
+                                      <tr>
+                                        <td width="100%" colspan="3" class="style5" valign="top">
+                                          <div align="center">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="80%" class="style6">
+                                              <tr>
+                                                <td width="100%" colspan="7" align="center">&nbsp;</td>
+                                              </tr>
+                                         
+                                              <tr>
+                                                <td width="100%" colspan="7" align="center">GRADING SYSTEM</td>
+                                              </tr>
+                                              <tr>
+                                                <td width="14%">A+</td>
+                                                <td width="14%">:</td>
+                                                <td width="14%">4.0</td>
+                                                <td width="14%"></td>
+                                                <td width="14%">A</td>
+                                                <td width="14%">:</td>
+                                                <td width="14%">4.0</td>
+                                              </tr>
+                                              <tr>
+                                                <td width="14%">A-</td>
+                                                <td width="15%">:</td>
+                                                <td width="15%">3.67</td>
+                                                <td width="14%"></td>
+                                                <td width="14%">B+</td>
+                                                <td width="14%">:</td>
+                                                <td width="14%">3.33</td>
+                                             </tr>
+                                              <tr>
+                                                <td width="14%">B</td>
+                                                <td width="15%">:</td>
+                                                <td width="15%">3.0</td>
+                                                <td width="14%"></td>
+                                                <td width="14%">B-</td>
+                                                <td width="15%">:</td>
+                                                <td width="15%">2.67</td>
+                                              </tr>
+                                              <tr>
+                                                <td width="14%">C+</td>
+                                                <td width="15%">:</td>
+                                                <td width="15%">2.33</td>
+                                                <td width="14%"></td>
+                                                <td width="14%">C</td>
+                                                <td width="14%">:</td>
+                                                <td width="14%">2.0</td>
+                                              </tr>
+                                              <tr>
+                                                <td width="14%">C-</td>
+                                                <td width="15%">:</td>
+                                                <td width="15%">1.67</td>
+                                                <td width="14%"></td>
+                                                <td width="14%">D+</td>
+                                                <td width="14%">:</td>
+                                                <td width="14%">1.33</td>
+                                              </tr>
+                                              <tr>
+                                                <td width="14%">D</td>
+                                                <td width="15%">:</td>
+                                                <td width="15%">1.0</td>
+                                                <td width="14%"></td>
+                                                <td width="14%">D-</td>
+                                                <td width="15%">:</td>
+                                                <td width="15%">0.67</td>
+                                              </tr>
+                                              <tr>
+                                              <td width="14%">E</td>
+                                                <td width="15%">:</td>
+                                                <td width="15%">0.00</td>
+                                              </tr>
+                                           
+                                            </table>
+                                            
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="52%" class="style72" valign="top" colspan="2">&nbsp;<b>REMARK&nbsp;&nbsp;</b>DEAN'S LIST</td>
+                                </tr>
+                              </table>
+                              
+                            </div>
+                            <div align="center">
+                              
+                            <table border="0" cellpadding="0" cellspacing="0" width="85%" class="style8">
+                              <tr>
+                                <td width="9%" valign="top">&nbsp;</td>
+                                <td width="91%" valign="top">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td width="9%" valign="top"><b>Guide:</b></td>
+                                <td width="91%" valign="top">GR : Grade&nbsp;&nbsp; MN : Point Value&nbsp;&nbsp;
+                                  KR : Credit&nbsp;&nbsp; JMN : Total Point Value&nbsp;&nbsp; ST :
+                                  Status&nbsp;&nbsp; KD : Credit Obtained</td>
+                              </tr>
+                              <tr>
+                                <td width="9%" valign="top"></td>
+                                <td width="91%" valign="top">KK: Credit Counted&nbsp;&nbsp; CE : Credit Transfer&nbsp;&nbsp; PK : Special Exam&nbsp;&nbsp; UM : Repeat Course&nbsp;&nbsp; L : Pass</td>
+                              </tr>
+                              <tr>
+                                <td width="9%" valign="top"></td>
+                                <td width="91%" valign="top">G : Fail&nbsp; TD : Withdrawn</td>
+                              </tr>
+                            </table>
+                             
+                            </div>
+                            <div align="center">
+                              
+                              <table border="0" cellpadding="0" cellspacing="0" width="95%" class="style2">
+                                <tr>
+                                  <td width="100%" colspan="2">
+                              <b><font color="#FF0000">&nbsp;</font></b></td>
+                                </tr>          
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                        <br>
+
+            </div>
+        </div>
+      </ion-content>
+</html>

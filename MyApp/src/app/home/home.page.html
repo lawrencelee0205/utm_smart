@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Result
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <ion-item>
+   <ion-label>Matric No</ion-label>
+   <ion-input [(ngModel)]="Matric_no" type="text"></ion-input>
+ </ion-item>
+ <ion-item>
+   <ion-label>Semester</ion-label>
+   <ion-select [(ngModel)]="Sem" okText="Okay" cancelText="Dismiss">
+    <ion-select-option value="2019-2020-2">2019/2020-2</ion-select-option>
+    <ion-select-option value="2019-2020-1">2019/2020-1</ion-select-option>
+    <ion-select-option value="2018-2019-2">2018/2019-2</ion-select-option>
+    <ion-select-option value="2018-2019-1">2018/2019-1</ion-select-option>
+  </ion-select>
+ </ion-item>
+ <ion-button (click)="get_Result()">Submit</ion-button>
+</ion-content>

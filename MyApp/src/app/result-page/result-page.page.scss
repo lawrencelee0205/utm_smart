@@ -1,0 +1,113 @@
+#container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#container strong {
+    font-size: 20px;
+    line-height: 26px;
+}
+
+#container p {
+    font-size: 16px;
+    line-height: 22px;
+    color: #8c8c8c;
+    margin: 0;
+}
+
+#container a {
+    text-decoration: none;
+}
+.printable-content {
+    .style1 {
+        font-family: Bookman Old Style;
+        font-size: 11;
+    }
+    .style2 {
+        font-family: Bookman Old Style;
+        font-size: 13;
+    }
+    .style3 {
+        font-family: Bookman Old Style;
+        font-size: 10;
+        border-width: 1;
+        border-left-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+    }
+    .style31 {
+        font-family: Bookman Old Style;
+        font-size: 10;
+        border-width: 1;
+        border-right-style: solid;
+        border-bottom-style: solid;
+    }
+    .style32 {
+        font-family: Bookman Old Style;
+        font-size: 10;
+        border-width: 1;
+        border-bottom-style: solid;
+    }
+    .style4 {
+        font-family: Bookman Old Style;
+        font-size: 11;
+        border-width: 1;
+        border-left-style: solid;
+        border-right-style: solid;
+    }
+    .style41 {
+        font-family: Bookman Old Style;
+        font-size: 11;
+        border-width: 1;
+        border-right-style: solid;
+    }
+    .style42 {
+        font-family: Bookman Old Style;
+        font-size: 11;
+    }
+    
+    .style5 {
+        font-family: Bookman Old Style;
+        font-size: 10;
+        border-width: 1;
+        border-top-style: solid;
+    }
+    .style6 {
+        font-family: Bookman Old Style;
+        font-size: 9;
+    }
+    
+    .style7 {
+        font-family: Bookman Old Style;
+        font-size: 11;
+        border-width: 1;
+        border-left-style: solid;
+        border-right-style: solid;
+        border-top-style: solid;
+    }
+    .style71 {
+        font-family: Bookman Old Style;
+        font-size: 11;
+        border-width: 1;
+        border-right-style: solid;
+        border-top-style: solid;
+    }
+    .style72 {
+        font-family: Bookman Old Style;
+        font-size: 11;
+        border-width: 1;
+        border-right-style: solid;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+    }
+    
+    .style8 {
+        font-family: Bookman Old Style;
+        font-size: 10;
+    }
+}

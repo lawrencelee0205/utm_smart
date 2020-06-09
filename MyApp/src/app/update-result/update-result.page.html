@@ -1,0 +1,85 @@
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Enter Student Result</ion-title>
+    <ion-buttons slot="end" fill="clear" (click)="close()">
+      <ion-icon slot="icon-only" name="close"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3 style="padding-left: 20px;">Carry mark</h3>
+
+  <form #form="ngForm" (ngSubmit)="update_mark(form)" method="post">
+    <ion-list>
+      <ion-item>
+        <ion-label>Assignment: </ion-label>
+        <ion-input
+          [(ngModel)]="Assignment"
+          name="assignment"
+          type="number"
+          placeholder="assignment"
+          
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Quiz: </ion-label>
+        <ion-input
+          [(ngModel)]="Quiz"
+          name="quiz"
+          type="number"
+          placeholder="quiz"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>MidTerm: </ion-label>
+        <ion-input
+          [(ngModel)]="MidTerm"
+          name="midterm"
+          type="number"
+          placeholder="mid term"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Project: </ion-label>
+        <ion-input
+          [(ngModel)]="Project"
+          name="project"
+          type="number"
+          placeholder="project"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Presentation: </ion-label>
+        <ion-input
+          [(ngModel)]="Presentation"
+          name="presentation"
+          type="number"
+          placeholder="presentation"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Final: </ion-label>
+        <ion-input
+          [(ngModel)]="Final"
+          name="final"
+          type="number"
+          placeholder="final"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button
+      expand="half"
+      style="--background: rgb(138, 55, 30);font-size:15px;"
+      type="submit"
+      
+      >Update</ion-button
+    >
+  </form>
+</ion-content>

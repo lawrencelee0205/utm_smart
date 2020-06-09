@@ -1,0 +1,140 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title strong="true">Student List<br /></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item style="padding-top: 20px; line-height: 20px;"
+    >{{'Course Name: ' + SelectedCourse.Course_Name}}<br />
+    {{'Course Code: ' + SelectedCourse.Code}}<br />
+    {{'Section: ' + SelectedCourse.Section}}<br />
+  </ion-item>
+  <!-- <ion-list> -->
+  <ion-item style="width: 100%;">
+    
+    <ion-grid nowrap class="forecast_container">
+      <ion-row col-12 class="ion-align-items-center">
+       <ion-col col-1>
+          <div>
+          No.</div>
+        </ion-col>
+        <ion-col size="auto"> <div>
+          Student</div>
+        </ion-col>
+        <ion-col col-12>
+         <div> Assignment</div>
+        </ion-col>
+        <ion-col col-2>
+          <div>Quiz</div>
+        </ion-col>
+        <ion-col col-3>
+        <div>  MidTerm</div>
+        </ion-col>
+        <ion-col col-2>
+        <div>  Project</div>
+        </ion-col>
+        <ion-col col-8>
+        <div>  Presentation</div>
+        </ion-col>
+        <ion-col col-2>
+       <div>  Final</div>
+        </ion-col>
+        <ion-col col-2>
+        <div>     Total</div>
+        </ion-col>
+        <ion-col col-5>
+        <div>   Actions</div>
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngFor="let student of Student,let i = index"
+        col-12
+        class="ion-align-items-center"
+      >
+        <ion-col col-1 style="width: 10%;">
+          <div>
+          {{i+1}}
+          <br /></div>
+        </ion-col>
+        <ion-col size="auto">
+          <div>
+          {{student.StudentId.Name}}<br />
+          {{student.StudentId.MatricsNo}}</div>
+        </ion-col>
+        <ion-col col-3>
+          <div>
+          {{student.MarkId.Assignment}}</div>
+        </ion-col>
+        <ion-col col-3>
+          <div>
+          {{student.MarkId.Quiz}}</div>
+        </ion-col>
+        <ion-col col-3>
+          <div>
+          {{student.MarkId.MidTerm}}</div>
+        </ion-col>
+        <ion-col col-3>
+          <div>
+          {{student.MarkId.Project}}</div>
+        </ion-col>
+        <ion-col col-8>
+          <div>
+          {{student.MarkId.Presentation}}</div>
+        </ion-col>
+        <ion-col col-2>
+        <div>
+          {{student.MarkId.Final}}</div>
+        </ion-col>
+        <ion-col col-2>
+          
+          
+          {{total_mark[i]}}
+        </ion-col>
+        <ion-col col-4>
+          <ion-button
+            *ngIf=" student.MarkId.Quiz == 0 && student.MarkId.Assignment== 0 && student.MarkId.MidTerm== 0 && student.MarkId.Project== 0 && student.MarkId.Presentation== 0 && student.MarkId.Final== 0;"
+            style="--background: rgb(138, 55, 30);"
+            side="end"
+            (click)="update_mark(student.MarkId)"
+            >Add
+          </ion-button>
+          <ion-button
+            *ngIf=" student.MarkId.Quiz != 0"
+            style="--background: rgb(138, 55, 30);"
+            side="end"
+            (click)="update_mark(student.MarkId)"
+            >Update
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <!-- <ion-item *ngFor="let student of Student"> -->
+  <!-- <ion-label>
+        <p style="font-size: large; padding-bottom: 10px;">
+          {{student.StudentId.Name}}
+        </p>
+        <p>{{student.StudentId.MatricsNo}}</p>
+        <p>Assignment: {{student.MarkId.Assignment}}</p>
+        <p>Quiz: {{student.MarkId.Quiz}}</p>
+        <p>MidTerm: {{student.MarkId.MidTerm}}</p>
+        <p>Project: {{student.MarkId.Project}}</p>
+        <p>Presentation: {{student.MarkId.Presentation}}</p>
+        <p>Final: {{student.MarkId.Final}}</p>
+      </ion-label> -->
+  <!-- </ion-item> -->
+
+  <!-- <ion-button
+      *ngIf=" student.MarkId.Quiz == 0"
+      style="--background: rgb(138, 55, 30);"
+      side="end"
+      [routerLink]="['/add-result/',student._id]"
+      >Add Result
+    </ion-button>
+    <ion-button
+      style="--background: rgb(138, 55, 30);"
+      side="end"
+      [routerLink]="['/add-result/',student._id]"
+      >Update Result
+    </ion-button> -->
+</ion-content>

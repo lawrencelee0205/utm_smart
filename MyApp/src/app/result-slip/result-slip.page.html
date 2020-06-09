@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Result Slip</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-item>
+    {{Student.Name}}
+  </ion-item>
+  <ion-item *ngFor="let result of Result">
+    <ion-item>
+      <ion-col>
+        <p>{{result.Name}}</p>
+        <p>{{result.Grade}}</p>
+      </ion-col>
+    </ion-item>
+   </ion-item>
+   <ion-button (click)="Save_pdf()">Save</ion-button>
+</ion-content>

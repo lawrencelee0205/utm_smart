@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mongoose": "^4.6.2",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.0",
+    "del": "2.2.0",
+    "express": "^4.14.0",
+    "http": "0.0.0",
+    "method-override": "^2.3.6",
+    "morgan": "^1.7.0",
+    "superlogin": "^0.6.1"
+  },
+  "dependencies": {
+    "@ionic-native/file": "^5.24.0",
+    "@ionic-native/file-opener": "^5.24.0",
+    "pdfkit": "^0.11.0",
+    "pdfmake": "^0.1.65"
+  }
+}

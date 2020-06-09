@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    
+    <ion-title style="font-weight: bolder;">
+      <img src="../../assets/icon/Logo UTM.jpg" width="150">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Result-Staff
+    </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-item *ngFor="let student of students" >
+    <ion-item>
+      <ion-label>
+        <p>{{student.name}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-label></ion-label>
+    <ion-button side="end" [routerLink]="['/resultpage/',student._id]">View
+    </ion-button>
+    
+  </ion-item>
+</ion-content>
